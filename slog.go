@@ -39,6 +39,12 @@ func PanicIf(err error) {
 	}
 }
 
+func PanicIff(err error, template string, v ...interface{}) {
+	if err != nil {
+		stdLog.Panicf(template, v...)
+	}
+}
+
 func SetPrefix(s string) {
 	stdLog.SetPrefix("[" + s + "] ")
 }
